@@ -1,0 +1,394 @@
+/* خلفية عامة للصفحة */
+body {
+    background: #fdf7f2; 
+    /* لون الخلفية الأساسي للموقع */
+
+    font-family: "Cairo", sans-serif;
+    /* نوع الخط المستخدم في كل الصفحة */
+
+    color: #1f2937;
+    /* اللون الافتراضي للنصوص */
+
+    margin: 0;
+    padding: 0;
+    /* إزالة أي مسافات افتراضية من المتصفح */
+
+    scroll-behavior: smooth;
+    /* يجعل التمرير بين الأقسام سلس */
+}
+
+/* تنسيق الهيدر */
+.main-header {
+    background: #ffffff;
+    /* لون خلفية الهيدر */
+
+    border-bottom: 2px solid #e8dcc7;
+    /* خط خفيف أسفل الهيدر */
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    /* ظل خفيف يعطي عمق للهيدر */
+
+    position: sticky;
+    top: 0;
+    /* يجعل الهيدر ثابت أعلى الصفحة عند التمرير */
+
+    z-index: 999;
+    /* يمنع الهيدر من الاختفاء خلف العناصر */
+}
+
+/* تنسيق شعار الموقع داخل الهيدر */
+.main-header .logo {
+    color: #d4af37;
+    /* لون ذهبي */
+
+    font-weight: 800;
+    /* سماكة الخط */
+
+    margin: 0;
+    /* إزالة المسافات حول الشعار */
+}
+
+/* تنسيق روابط القائمة */
+.main-header .nav-link {
+    color: #4b5563;
+    /* لون النص */
+
+    font-weight: 600;
+    /* سماكة متوسطة */
+
+    transition: 0.3s;
+    /* حركة ناعمة عند التغيير */
+}
+
+/* تأثير عند تمرير الماوس على الروابط */
+.main-header .nav-link:hover {
+    color: #d4af37;
+    /* يتحول للون الذهبي */
+}
+
+/* زر تغيير النمط (Dark Mode) */
+.mode-btn {
+    background: #d4af37;
+    /* لون الخلفية */
+
+    color: #fff;
+    /* لون النص */
+
+    border: none;
+    /* بدون حدود */
+
+    padding: 8px 18px;
+    /* مساحة داخلية للزر */
+
+    border-radius: 10px;
+    /* حواف دائرية */
+
+    cursor: pointer;
+    /* شكل اليد عند المرور */
+
+    font-weight: 600;
+    /* سماكة الخط */
+
+    transition: 0.3s;
+    /* حركة ناعمة */
+}
+
+/* تأثير عند تمرير الماوس على زر النمط */
+.mode-btn:hover {
+    background: #b8922c;
+    /* لون أغمق قليلاً */
+}
+
+/* قسم الهيرو */
+.hero {
+    width: 100%;
+    /* يأخذ عرض الصفحة كامل */
+
+    height: 80vh;
+    /* ارتفاع كبير يغطي معظم الشاشة */
+
+    background-image: url('../assets/images/hero.jpg');
+    /* صورة الخلفية */
+
+    background-size: cover;
+    /* يجعل الصورة تغطي المساحة بالكامل */
+
+    background-position: center center;
+    /* يضع الصورة في المنتصف */
+
+    background-repeat: no-repeat;
+    /* يمنع تكرار الصورة */
+
+    border-radius: 0 0 20px 20px;
+    /* حواف سفلية دائرية */
+
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    /* يخفي أي جزء زائد من الصورة */
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    /* ظل جميل أسفل الهيرو */
+}
+
+/* طبقة شفافة فوق صورة الهيرو */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* يغطي كامل القسم */
+
+    background: rgba(0,0,0,0.35);
+    /* طبقة سوداء شفافة لتوضيح النص */
+}
+
+/* محتوى النص داخل الهيرو */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* وضع المحتوى في منتصف القسم */
+
+    transform: translate(-50%, -50%);
+    /* ضبط التمركز بدقة */
+
+    z-index: 2;
+    /* فوق طبقة التعتيم */
+
+    color: #fff;
+    /* لون النص أبيض */
+}
+
+/* عنوان الهيرو */
+.hero-content h1 {
+    font-size: 48px;
+    /* حجم كبير */
+
+    font-weight: 800;
+    /* سماكة قوية */
+
+    margin-bottom: 25px;
+    /* مسافة أسفل العنوان */
+}
+
+/* زر الهيرو */
+.hero-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #d4af37;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* تأثير عند تمرير الماوس على زر الهيرو */
+.hero-btn:hover {
+    background: #b8922c;
+}
+
+/* صندوق الفيديو */
+.video-box {
+    width: 100%;
+    max-width: 900px;
+    /* أقصى عرض للفيديو */
+
+    margin: 0 auto;
+    /* توسيط الفيديو */
+
+    border-radius: 20px;
+    overflow: hidden;
+    /* يجعل الفيديو داخل الحواف الدائرية */
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* الفيديو نفسه */
+video {
+    width: 100%;
+    /* يأخذ عرض الصندوق */
+
+    display: block;
+    /* يمنع وجود مسافات تحت الفيديو */
+}
+
+/* البطاقات */
+.card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: none;
+    padding-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس على الكرت */
+.card:hover {
+    transform: translateY(-5px);
+    /* يتحرك للأعلى قليلاً */
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* صورة الكرت */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    /* يجعل الصورة مقصوصة بشكل جميل */
+
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* عنوان الكرت */
+.card-title {
+    color: #d4af37;
+    font-weight: 700;
+}
+
+/* نص الكرت */
+.card-text {
+    color: #6b7280;
+}
+
+/* إعادة ضبط تنسيق الجدول بالكامل */
+table, thead, tbody, th, td, tr {
+    all: unset;
+    /* إزالة كل التنسيقات الافتراضية */
+
+    display: revert;
+    /* إعادة عرض العناصر لطبيعتها */
+
+    box-sizing: border-box;
+}
+
+/* تنسيق الجدول */
+table {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* رأس الجدول */
+table thead {
+    background: #f5e9d8;
+}
+
+/* خلايا رأس الجدول */
+table thead th {
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    color: #a07c3a;
+}
+
+/* صفوف الجدول */
+table tbody tr {
+    background: #fffdf9;
+    transition: 0.25s ease;
+}
+
+/* صفوف زوجية */
+table tbody tr:nth-child(even) {
+    background: #f8f3ec;
+}
+
+/* تأثير عند تمرير الماوس */
+table tbody tr:hover {
+    background: #f1e7d8;
+}
+
+/* خلايا الجدول */
+table td {
+    padding: 14px;
+    font-size: 17px;
+    text-align: center;
+    color: #4b4b4b;
+    border-bottom: 1px solid #f1e7d8;
+}
+
+/* إزالة الخط السفلي من آخر صف */
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* صندوق الفورم */
+.form-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* حقول الإدخال */
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #e8dcc7;
+    background: #fffdf9;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #4b4b4b;
+    transition: 0.3s ease;
+}
+
+/* تأثير عند التركيز على الحقل */
+form input:focus,
+form textarea:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 8px rgba(212,175,55,0.25);
+}
+
+/* زر إرسال الفورم */
+form button {
+    width: 100%;
+    background-color: #d4af37;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس */
+form button:hover {
+    background-color: #b8922c;
+}
+
+/* الفوتر */
+footer {
+    background: #ffffff;
+    border-top: 2px solid #e8dcc7;
+    padding: 15px;
+    font-weight: 600;
+}
+
+/* وضعية الـ Dark Mode */
+.dark-mode {
+    background: #1a1a1a !important;
+    /* خلفية داكنة */
+
+    color: #fff !important;
+    /* نص أبيض */
+}
+
+/* عناصر تتغير في الوضع الداكن */
+.dark-mode header,
+.dark-mode footer,
+.dark-mode .form-container,
+.dark-mode table {
+    background: #2a2a2a !important;
+    /* خلفية داكنة */
+
+    color: #fff !important;
+    /* نص أبيض */
+}
