@@ -243,9 +243,10 @@ video {
 
 /* عنوان الكرت */
 .card-title {
-    color: #d4af37;
+    color: #4b5563; /* لون رمادي افتراضي */
     font-weight: 700;
 }
+
 
 /* نص الكرت */
 .card-text {
