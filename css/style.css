@@ -2,62 +2,62 @@
    إعدادات عامة للصفحة
    ========================= */
 body {
-    background: #fdf7f2; /* بيج فاتح */
-    font-family: "Cairo", sans-serif;
-    color: #1f2937; /* رمادي غامق */
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+    background: #fdf7f2; /* لون خلفية بيج فاتح يعطي هدوء */
+    font-family: "Cairo", sans-serif; /* الخط المستخدم في الموقع */
+    color: #1f2937; /* لون النص الأساسي (رمادي غامق) */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة الحشوات الافتراضية */
+    scroll-behavior: smooth; /* يجعل الانتقال بين الأقسام سلس */
 }
 
 /* =========================
    الهيدر (Header)
    ========================= */
 .main-header {
-    background: #ffffff; /* أبيض */
-    border-bottom: 2px solid #e8dcc7; /* بيج رملي */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    background: #ffffff; /* خلفية بيضاء للهيدر */
+    border-bottom: 2px solid #e8dcc7; /* خط سفلي بلون بيج رملي */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* ظل خفيف للهيدر */
+    position: sticky; /* يبقى ثابت أعلى الصفحة عند التمرير */
+    top: 0; /* يلتصق بأعلى الصفحة */
+    z-index: 999; /* يظهر فوق باقي العناصر */
 }
 
 /* حاوية الهيدر */
 .nav-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px 20px;
+    max-width: 1200px; /* عرض أقصى للهيدر */
+    margin: auto; /* توسيط المحتوى */
+    padding: 15px 20px; /* مسافات داخلية */
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* ترتيب العناصر بجانب بعض */
+    justify-content: space-between; /* توزيع العناصر */
+    align-items: center; /* محاذاة عمودية */
 }
 
 /* الشعار */
 .logo {
-    color: #d4af37; /* ذهبي */
-    font-weight: 800;
+    color: #d4af37; /* لون ذهبي */
+    font-weight: 800; /* سماكة الخط */
     margin: 0;
 }
 
 /* روابط الهيدر */
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+    list-style: none; /* إزالة النقاط */
+    display: flex; /* عرض الروابط بجانب بعض */
+    gap: 25px; /* مسافة بين الروابط */
     margin: 0;
     padding: 0;
 }
 
 .nav-links a {
-    text-decoration: none;
+    text-decoration: none; /* إزالة الخط السفلي */
     color: #4b5563; /* رمادي متوسط */
     font-weight: 600;
-    transition: 0.3s;
+    transition: 0.3s; /* حركة عند التمرير */
 }
 
 .nav-links a:hover {
-    color: #d4af37; /* ذهبي */
+    color: #d4af37; /* يتحول للون الذهبي عند المرور */
 }
 
 /* زر تغيير النمط */
@@ -66,14 +66,14 @@ body {
     color: #fff; /* أبيض */
     border: none;
     padding: 8px 18px;
-    border-radius: 10px;
+    border-radius: 10px; /* زوايا دائرية */
     cursor: pointer;
     font-weight: 600;
     transition: 0.3s;
 }
 
 .mode-btn:hover {
-    background: #b8922c; /* ذهبي غامق */
+    background: #b8922c; /* ذهبي غامق عند التمرير */
 }
 
 /* =========================
@@ -81,33 +81,33 @@ body {
    ========================= */
 .hero {
     width: 100%;
-    height: 80vh;
-    background-image: url('../assets/images/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    border-radius: 0 0 20px 20px;
+    height: 80vh; /* يأخذ 80% من ارتفاع الشاشة */
+    background-image: url('../assets/images/hero.jpg'); /* صورة الخلفية */
+    background-size: cover; /* تغطية كاملة */
+    background-position: center; /* توسيط الصورة */
+    border-radius: 0 0 20px 20px; /* زوايا سفلية دائرية */
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* ظل للصورة */
 }
 
-/* طبقة تعتيم */
+/* طبقة تعتيم فوق الصورة */
 .hero::after {
     content: "";
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
+    inset: 0; /* تغطي كامل العنصر */
+    background: rgba(0,0,0,0.35); /* طبقة شفافة */
 }
 
 /* محتوى الهيرو */
 .hero-content {
     position: absolute;
-    top: 50%;
+    top: 50%; /* منتصف الصورة */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* توسيط دقيق */
     text-align: center;
-    color: #fff; /* أبيض */
-    z-index: 2;
+    color: #fff; /* نص أبيض */
+    z-index: 2; /* فوق طبقة التعتيم */
 }
 
 .hero-content h1 {
@@ -136,9 +136,9 @@ body {
    الأقسام العامة
    ========================= */
 .section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 60px 20px;
+    max-width: 1200px; /* عرض أقصى */
+    margin: auto; /* توسيط */
+    padding: 60px 20px; /* مسافات داخلية */
 }
 
 .section-title {
@@ -149,25 +149,25 @@ body {
 }
 
 /* =========================
-   شبكة الكروت (بديل Bootstrap)
+   شبكة الكروت
    ========================= */
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 كروت مثل Bootstrap */
-    gap: 20px;
+    display: grid; /* استخدام Grid */
+    grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+    gap: 20px; /* مسافة بين الكروت */
 }
 
-/* استجابة للشاشات المتوسطة */
+/* للشاشات المتوسطة */
 @media (max-width: 992px) {
     .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* عمودين */
     }
 }
 
-/* استجابة للشاشات الصغيرة */
+/* للشاشات الصغيرة */
 @media (max-width: 600px) {
     .cards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* عمود واحد */
     }
 }
 
@@ -184,14 +184,14 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* حركة بسيطة عند التمرير */
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .card-img-top {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover; /* قص الصورة بدون تشويه */
     border-radius: 15px;
 }
 
@@ -229,7 +229,7 @@ video {
    ========================= */
 .custom-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; /* دمج حدود الجدول */
     background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
@@ -256,11 +256,11 @@ video {
 }
 
 .custom-table tr:nth-child(even) {
-    background: #f8f3ec;
+    background: #f8f3ec; /* صفوف بلون مختلف */
 }
 
 .custom-table tr:hover {
-    background: #f1e7d8;
+    background: #f1e7d8; /* تأثير عند التمرير */
 }
 
 /* =========================
@@ -288,7 +288,7 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-    border-color: #d4af37;
+    border-color: #d4af37; /* ذهبي عند التركيز */
     box-shadow: 0 0 8px rgba(212,175,55,0.25);
 }
 
@@ -323,14 +323,14 @@ form button:hover {
    الوضع الداكن
    ========================= */
 .dark-mode {
-    background: #1a1a1a !important;
-    color: #fff !important;
+    background: #1a1a1a !important; /* خلفية داكنة */
+    color: #fff !important; /* نص أبيض */
 }
 
 .dark-mode .main-header,
 .dark-mode .footer,
 .dark-mode .form-container,
 .dark-mode .custom-table {
-    background: #2a2a2a !important;
+    background: #2a2a2a !important; /* عناصر داكنة */
     color: #fff !important;
 }

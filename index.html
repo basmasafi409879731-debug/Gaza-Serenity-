@@ -1,64 +1,73 @@
 <!DOCTYPE html>
+ <!--يجعل اتجاه الصفحة من اليمين لليسار، وهو مناسب للغة العربية.-->
 <html lang="ar" dir="rtl">
+    
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!--هذا الترميز الخاص باللغة العربية-->
+
+    <!-- عنوان الموقع الذي يظهر في التبويب -->
     <title>غزة الهادئة</title>
 
-    <!-- ربط ملف التنسيقات الجديد (بدون Bootstrap) -->
+    <!-- ربط ملف التنسيقات (CSS) المسؤول عن تصميم الموقع -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <!-- ========================= الهيدر ========================= -->
-<header class="main-header">
-    <nav class="nav-container">
+<header class="main-header"> <!-- رأس الصفحة -->
+    <nav class="nav-container"> <!-- شريط التنقل -->
+
+        <!-- شعار الموقع -->
         <h3 class="logo">غزة الهادئة</h3>
 
+        <!-- روابط التنقل بين أقسام الصفحة -->
         <ul class="nav-links">
             <li><a href="#spots">الأماكن</a></li>
             <li><a href="#table">أفضل الأوقات</a></li>
             <li><a href="#contact">تواصل معنا</a></li>
         </ul>
 
+        <!-- زر تفعيل الوضع الليلي -->
         <button id="modeBtn" class="mode-btn">تغيير النمط</button>
     </nav>
 </header>
 
-<!-- ========================= الهيرو ========================= -->
-<section class="hero">
-    <div class="hero-content">
+<!-- ========================= قسم الهيرو ========================= -->
+<section class="hero"> <!-- صورة كبيرة مع عنوان -->
+    <div class="hero-content"> <!-- النص الموجود فوق الصورة -->
         <h1>دليل الأماكن الهادئة في غزة</h1>
+
+        <!-- زر ينقل المستخدم لقسم الأماكن -->
         <a href="#spots" class="hero-btn">اذهب إلى الأماكن</a>
     </div>
 </section>
 
-<!-- ========================= الأماكن ========================= -->
+<!-- ========================= قسم الأماكن ========================= -->
 <section id="spots" class="section">
     <h2 class="section-title">الأماكن الهادئة</h2>
 
-    <!-- شبكة الكروت (بدون Bootstrap) -->
-    <div class="cards-grid" id="cardsGrid">
-        <!-- الكروت ستُضاف ديناميكيًا من JavaScript -->
-    </div>
+    <!-- هنا سيتم إضافة الكروت ديناميكيًا من خلال JavaScript -->
+    <div class="cards-grid" id="cardsGrid"></div>
 </section>
 
-<!-- ========================= الفيديو ========================= -->
+<!-- ========================= قسم الفيديو ========================= -->
 <section id="video" class="section">
     <h2 class="section-title">لقطات هادئة من غزة</h2>
 
     <div class="video-box">
-        <video controls>
+        <video controls> <!-- تشغيل الفيديو -->
             <source src="assets/video/calm.mp4" type="video/mp4">
             متصفحك لا يدعم تشغيل الفيديو.
         </video>
     </div>
 </section>
 
-<!-- ========================= الجدول ========================= -->
+<!-- ========================= قسم الجدول ========================= -->
 <section id="table" class="section">
     <h2 class="section-title">أفضل الأوقات لزيارتها</h2>
 
+    <!-- جدول يعرض معلومات عن الأماكن -->
     <table class="custom-table">
         <thead>
             <tr>
@@ -67,6 +76,7 @@
                 <th>أفضل وقت للزيارة</th>
             </tr>
         </thead>
+
         <tbody>
             <tr><td>شاطئ البحر</td><td>عالي</td><td>الصباح الباكر</td></tr>
             <tr><td>الميناء</td><td>متوسط</td><td>العصر</td></tr>
@@ -76,11 +86,12 @@
     </table>
 </section>
 
-<!-- ========================= تواصل معنا ========================= -->
+<!-- ========================= قسم التواصل ========================= -->
 <section id="contact" class="section">
     <h2 class="section-title">تواصل معنا</h2>
 
     <div class="form-container">
+        <!-- نموذج بسيط لإرسال رسالة -->
         <form>
             <input type="text" placeholder="الاسم">
             <input type="email" placeholder="البريد الإلكتروني">
@@ -95,7 +106,9 @@
     © 2024 أماكن تنتهي بك إلى غزة – غزة
 </footer>
 
-<!-- ربط ملف JavaScript الجديد (بدون jQuery) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- ربط ملف JavaScript المسؤول عن الكروت والأنيميشن والوضع الليلي -->
 <script src="js/main.js"></script>
 
 </body>
