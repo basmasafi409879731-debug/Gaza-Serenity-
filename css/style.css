@@ -1,181 +1,126 @@
-/* خلفية عامة للصفحة */
+/* =========================
+   إعدادات عامة للصفحة
+   ========================= */
 body {
-    background: #fdf7f2; 
-    /* لون الخلفية الأساسي للموقع */
-
+    background: #fdf7f2; /* بيج فاتح */
     font-family: "Cairo", sans-serif;
-    /* نوع الخط المستخدم في كل الصفحة */
-
-    color: #1f2937;
-    /* اللون الافتراضي للنصوص */
-
+    color: #1f2937; /* رمادي غامق */
     margin: 0;
     padding: 0;
-    /* إزالة أي مسافات افتراضية من المتصفح */
-
     scroll-behavior: smooth;
-    /* يجعل التمرير بين الأقسام سلس */
 }
 
-/* تنسيق الهيدر */
+/* =========================
+   الهيدر (Header)
+   ========================= */
 .main-header {
-    background: #ffffff;
-    /* لون خلفية الهيدر */
-
-    border-bottom: 2px solid #e8dcc7;
-    /* خط خفيف أسفل الهيدر */
-
+    background: #ffffff; /* أبيض */
+    border-bottom: 2px solid #e8dcc7; /* بيج رملي */
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    /* ظل خفيف يعطي عمق للهيدر */
-
     position: sticky;
     top: 0;
-    /* يجعل الهيدر ثابت أعلى الصفحة عند التمرير */
-
     z-index: 999;
-    /* يمنع الهيدر من الاختفاء خلف العناصر */
 }
 
-/* تنسيق شعار الموقع داخل الهيدر */
-.main-header .logo {
-    color: #d4af37;
-    /* لون ذهبي */
+/* حاوية الهيدر */
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* الشعار */
+.logo {
+    color: #d4af37; /* ذهبي */
     font-weight: 800;
-    /* سماكة الخط */
-
     margin: 0;
-    /* إزالة المسافات حول الشعار */
 }
 
-/* تنسيق روابط القائمة */
-.main-header .nav-link {
-    color: #4b5563;
-    /* لون النص */
+/* روابط الهيدر */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
 
+.nav-links a {
+    text-decoration: none;
+    color: #4b5563; /* رمادي متوسط */
     font-weight: 600;
-    /* سماكة متوسطة */
-
     transition: 0.3s;
-    /* حركة ناعمة عند التغيير */
 }
 
-/* تأثير عند تمرير الماوس على الروابط */
-.main-header .nav-link:hover {
-    color: #d4af37;
-    /* يتحول للون الذهبي */
+.nav-links a:hover {
+    color: #d4af37; /* ذهبي */
 }
 
-/* زر تغيير النمط (Dark Mode) */
+/* زر تغيير النمط */
 .mode-btn {
-    background: #d4af37;
-    /* لون الخلفية */
-
-    color: #fff;
-    /* لون النص */
-
+    background: #d4af37; /* ذهبي */
+    color: #fff; /* أبيض */
     border: none;
-    /* بدون حدود */
-
     padding: 8px 18px;
-    /* مساحة داخلية للزر */
-
     border-radius: 10px;
-    /* حواف دائرية */
-
     cursor: pointer;
-    /* شكل اليد عند المرور */
-
     font-weight: 600;
-    /* سماكة الخط */
-
     transition: 0.3s;
-    /* حركة ناعمة */
 }
 
-/* تأثير عند تمرير الماوس على زر النمط */
 .mode-btn:hover {
-    background: #b8922c;
-    /* لون أغمق قليلاً */
+    background: #b8922c; /* ذهبي غامق */
 }
 
-/* قسم الهيرو */
+/* =========================
+   قسم الهيرو (Hero)
+   ========================= */
 .hero {
     width: 100%;
-    /* يأخذ عرض الصفحة كامل */
-
     height: 80vh;
-    /* ارتفاع كبير يغطي معظم الشاشة */
-
     background-image: url('../assets/images/hero.jpg');
-    /* صورة الخلفية */
-
     background-size: cover;
-    /* يجعل الصورة تغطي المساحة بالكامل */
-
-    background-position: center center;
-    /* يضع الصورة في المنتصف */
-
-    background-repeat: no-repeat;
-    /* يمنع تكرار الصورة */
-
+    background-position: center;
     border-radius: 0 0 20px 20px;
-    /* حواف سفلية دائرية */
-
-    margin: 0;
     position: relative;
     overflow: hidden;
-    /* يخفي أي جزء زائد من الصورة */
-
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    /* ظل جميل أسفل الهيرو */
 }
 
-/* طبقة شفافة فوق صورة الهيرو */
+/* طبقة تعتيم */
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    /* يغطي كامل القسم */
-
     background: rgba(0,0,0,0.35);
-    /* طبقة سوداء شفافة لتوضيح النص */
 }
 
-/* محتوى النص داخل الهيرو */
+/* محتوى الهيرو */
 .hero-content {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* وضع المحتوى في منتصف القسم */
-
     transform: translate(-50%, -50%);
-    /* ضبط التمركز بدقة */
-
+    text-align: center;
+    color: #fff; /* أبيض */
     z-index: 2;
-    /* فوق طبقة التعتيم */
-
-    color: #fff;
-    /* لون النص أبيض */
 }
 
-/* عنوان الهيرو */
 .hero-content h1 {
     font-size: 48px;
-    /* حجم كبير */
-
     font-weight: 800;
-    /* سماكة قوية */
-
     margin-bottom: 25px;
-    /* مسافة أسفل العنوان */
 }
 
 /* زر الهيرو */
 .hero-btn {
     display: inline-block;
     padding: 14px 30px;
-    background: #d4af37;
+    background: #d4af37; /* ذهبي */
     color: #fff;
     font-size: 20px;
     border-radius: 12px;
@@ -183,142 +128,144 @@ body {
     transition: 0.3s;
 }
 
-/* تأثير عند تمرير الماوس على زر الهيرو */
 .hero-btn:hover {
-    background: #b8922c;
+    background: #b8922c; /* ذهبي غامق */
 }
 
-/* صندوق الفيديو */
-.video-box {
-    width: 100%;
-    max-width: 900px;
-    /* أقصى عرض للفيديو */
-
-    margin: 0 auto;
-    /* توسيط الفيديو */
-
-    border-radius: 20px;
-    overflow: hidden;
-    /* يجعل الفيديو داخل الحواف الدائرية */
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+/* =========================
+   الأقسام العامة
+   ========================= */
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-/* الفيديو نفسه */
-video {
-    width: 100%;
-    /* يأخذ عرض الصندوق */
-
-    display: block;
-    /* يمنع وجود مسافات تحت الفيديو */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 800;
 }
 
-/* البطاقات */
+/* =========================
+   شبكة الكروت (بديل Bootstrap)
+   ========================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 كروت مثل Bootstrap */
+    gap: 20px;
+}
+
+/* استجابة للشاشات المتوسطة */
+@media (max-width: 992px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   الكروت
+   ========================= */
 .card {
     background: #ffffff;
     border-radius: 18px;
-    border: none;
     padding-bottom: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
+    transition: 0.3s;
+    overflow: hidden;
 }
 
-/* تأثير عند تمرير الماوس على الكرت */
 .card:hover {
     transform: translateY(-5px);
-    /* يتحرك للأعلى قليلاً */
-
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* صورة الكرت */
 .card-img-top {
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    /* يجعل الصورة مقصوصة بشكل جميل */
-
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* عنوان الكرت */
+.card-body {
+    padding: 15px;
+}
+
 .card-title {
-    color: #4b5563; /* لون رمادي افتراضي */
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
-
-/* نص الكرت */
 .card-text {
-    color: #6b7280;
+    color: #6b7280; /* رمادي فاتح */
 }
 
-/* إعادة ضبط تنسيق الجدول بالكامل */
-table, thead, tbody, th, td, tr {
-    all: unset;
-    /* إزالة كل التنسيقات الافتراضية */
-
-    display: revert;
-    /* إعادة عرض العناصر لطبيعتها */
-
-    box-sizing: border-box;
+/* =========================
+   الفيديو
+   ========================= */
+.video-box {
+    max-width: 900px;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* تنسيق الجدول */
-table {
+video {
     width: 100%;
+    display: block;
+}
+
+/* =========================
+   الجدول
+   ========================= */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
     background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
-    margin-top: 25px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* رأس الجدول */
-table thead {
-    background: #f5e9d8;
+.custom-table thead {
+    background: #f5e9d8; /* بيج فاتح */
 }
 
-/* خلايا رأس الجدول */
-table thead th {
+.custom-table th {
     padding: 16px;
     font-size: 18px;
     font-weight: 800;
     text-align: center;
-    color: #a07c3a;
+    color: #a07c3a; /* ذهبي بني */
 }
 
-/* صفوف الجدول */
-table tbody tr {
-    background: #fffdf9;
-    transition: 0.25s ease;
+.custom-table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #f1e7d8;
+    color: #4b4b4b;
 }
 
-/* صفوف زوجية */
-table tbody tr:nth-child(even) {
+.custom-table tr:nth-child(even) {
     background: #f8f3ec;
 }
 
-/* تأثير عند تمرير الماوس */
-table tbody tr:hover {
+.custom-table tr:hover {
     background: #f1e7d8;
 }
 
-/* خلايا الجدول */
-table td {
-    padding: 14px;
-    font-size: 17px;
-    text-align: center;
-    color: #4b4b4b;
-    border-bottom: 1px solid #f1e7d8;
-}
-
-/* إزالة الخط السفلي من آخر صف */
-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-/* صندوق الفورم */
+/* =========================
+   الفورم
+   ========================= */
 .form-container {
     background: #ffffff;
     padding: 25px;
@@ -326,7 +273,6 @@ table tbody tr:last-child td {
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* حقول الإدخال */
 form input,
 form textarea {
     width: 100%;
@@ -337,17 +283,15 @@ form textarea {
     margin-bottom: 12px;
     font-size: 16px;
     color: #4b4b4b;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-/* تأثير عند التركيز على الحقل */
 form input:focus,
 form textarea:focus {
     border-color: #d4af37;
     box-shadow: 0 0 8px rgba(212,175,55,0.25);
 }
 
-/* زر إرسال الفورم */
 form button {
     width: 100%;
     background-color: #d4af37;
@@ -357,39 +301,36 @@ form button {
     border-radius: 12px;
     color: #ffffff;
     font-weight: 700;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-/* تأثير عند تمرير الماوس */
 form button:hover {
     background-color: #b8922c;
 }
 
-/* الفوتر */
-footer {
+/* =========================
+   الفوتر
+   ========================= */
+.footer {
     background: #ffffff;
     border-top: 2px solid #e8dcc7;
     padding: 15px;
+    text-align: center;
     font-weight: 600;
 }
 
-/* وضعية الـ Dark Mode */
+/* =========================
+   الوضع الداكن
+   ========================= */
 .dark-mode {
     background: #1a1a1a !important;
-    /* خلفية داكنة */
-
     color: #fff !important;
-    /* نص أبيض */
 }
 
-/* عناصر تتغير في الوضع الداكن */
-.dark-mode header,
-.dark-mode footer,
+.dark-mode .main-header,
+.dark-mode .footer,
 .dark-mode .form-container,
-.dark-mode table {
+.dark-mode .custom-table {
     background: #2a2a2a !important;
-    /* خلفية داكنة */
-
     color: #fff !important;
-    /* نص أبيض */
 }

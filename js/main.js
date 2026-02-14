@@ -1,12 +1,12 @@
 /*  
 ===========================================
-   1) مصفوفة الأماكن (Array)
-   هنا نخزن بيانات كل مكان داخل كائن (Object)
-   وكل كائن يحتوي: اسم – وصف – صورة – مستوى الهدوء
+  1) مصفوفة الأماكن (Places Array)
+  - كل مكان عبارة عن كائن يحتوي:
+    الاسم – الوصف – الصورة – مستوى الهدوء
 ===========================================
 */
 
-let places = [
+const places = [
     {
         name: "شاطئ البحر",
         desc: "مكان مثالي للهدوء و سماع صوت الأمواج.",
@@ -36,84 +36,71 @@ let places = [
 
 /*  
 ===========================================
-   2) عرض الكروت باستخدام Loop
-   - نجيب مكان الكروت من قسم #spots
-   - نفرّغ الكروت القديمة
-   - نستخدم forEach لعرض كل مكان تلقائيًا
+  2) تجهيز مكان الكروت داخل الصفحة
 ===========================================
 */
 
-let cardsContainer = $("#spots .row"); 
-// نستهدف صف الكروت داخل قسم الأماكن
+const cardsGrid = document.getElementById("cardsGrid");
+// هذا هو المكان الذي سنضع فيه الكروت
 
-cardsContainer.html(""); 
-// تفريغ الكروت المكتوبة يدويًا
+cardsGrid.innerHTML = ""; 
+// تفريغ أي محتوى قديم (لو موجود)
 
-places.forEach(place => {
-    // لكل عنصر داخل المصفوفة… أنشئ كرت جديد
 
-    let card = `
-        <div class="col-md-3">
-            <div class="card shadow-sm place-card" style="display:none;">
-                <img src="${place.img}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">${place.name}</h5>
-                    <p class="card-text">${place.desc}</p>
-                </div>
-            </div>
+/*  
+===========================================
+  3) بناء الكروت ديناميكيًا بدون jQuery
+===========================================
+*/
+
+places.forEach((place, index) => {
+
+    // تحديد لون العنوان حسب مستوى الهدوء
+    let titleColor = "#4b5563"; // رمادي متوسط
+    if (place.quiet === "عالي") titleColor = "#d4af37"; // ذهبي
+    if (place.quiet === "متوسط") titleColor = "#1d4ed8"; // أزرق
+
+    // إنشاء عنصر الكرت
+    const card = document.createElement("div");
+    card.className = "card place-card";
+    card.style.opacity = "0"; // لإظهار الأنيميشن لاحقًا
+
+    // محتوى الكرت
+    card.innerHTML = `
+        <img src="${place.img}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title" style="color:${titleColor};">${place.name}</h5>
+            <p class="card-text">${place.desc}</p>
         </div>
     `;
 
-    cardsContainer.append(card);
-    // نضيف الكرت داخل الصفحة
+    // إضافة الكرت للشبكة
+    cardsGrid.appendChild(card);
 });
 
 
 /*  
 ===========================================
-   3) شرط (Condition)
-   - لو مستوى الهدوء "عالي" → نخلي العنوان ذهبي
-   - لو "متوسط" → نخليه أزرق
+  4) أنيميشن الظهور التدريجي (Fade In)
 ===========================================
 */
 
-$(".place-card").each(function(index){
+const cards = document.querySelectorAll(".place-card");
 
-    // نجيب مستوى الهدوء من المصفوفة
-    let level = places[index].quiet;
-
-    if (level === "عالي") {
-        // لو المكان هادئ جدًا → لون ذهبي
-        $(this).find(".card-title").css("color", "#d4af37");
-    } 
-    else if (level === "متوسط") {
-        // لو الهدوء متوسط → لون أزرق
-        $(this).find(".card-title").css("color", "#1d4ed8");
-    }
-});
-
-
-
-/*  
-===========================================
-   4) Animation (Fade)
-   - نخلي الكروت تظهر تدريجيًا بشكل جميل
-   - كل كرت يتأخر 200ms عن اللي قبله
-===========================================
-*/
-
-$(".place-card").each(function(i){
-    $(this).delay(i * 200).fadeIn(600);
+cards.forEach((card, i) => {
+    setTimeout(() => {
+        card.style.transition = "0.6s";
+        card.style.opacity = "1";
+    }, i * 200); // كل كرت يتأخر 200ms عن اللي قبله
 });
 
 
 /*  
 ===========================================
-   5) زر تغيير النمط (Dark Mode)
-   - عند الضغط على الزر → نضيف/نحذف كلاس dark-mode
+  5) زر تغيير النمط (Dark Mode)
 ===========================================
 */
 
-$("#modeBtn").click(function () {
-    $("body").toggleClass("dark-mode");
+document.getElementById("modeBtn").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
 });
